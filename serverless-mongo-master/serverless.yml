@@ -17,7 +17,7 @@ provider:
   name: aws
   runtime: nodejs10.x
   stage: prod
-  region: us-east-1
+  region: us-east-2
   # profile: enter-name-here
   memorySize: 128
   timeout: 10
@@ -79,4 +79,22 @@ functions:
       - http:
           path: users/{id}
           method: delete
+          cors: true
+  createComment:
+    handler: comments.create
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: comments
+          method: post
+          cors: true
+  getAllComments:
+    handler: comments.getAll
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: comments
+          method: post
           cors: true
