@@ -1,0 +1,10 @@
+{
+    "pathParameters": {
+      "id": "5f0dd59a45b6fd7e48c31fe4"
+    },
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "becky@studio.un-loop.org"
+      }
+    }
+  }

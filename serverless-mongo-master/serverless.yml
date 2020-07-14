@@ -81,7 +81,7 @@ functions:
           method: delete
           cors: true
   createComment:
-    handler: comments.create
+    handler: comments.createComment
     environment:
       DB: ${ssm:mongo}
     events:
@@ -90,11 +90,11 @@ functions:
           method: post
           cors: true
   getAllComments:
-    handler: comments.getAll
+    handler: comments.getAllComments
     environment:
       DB: ${ssm:mongo}
     events:
       - http:
-          path: comments
-          method: post
+          path: comments/{id}
+          method: get
           cors: true

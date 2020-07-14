@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
 
-const CommentSchema = new Schema({
+const CommentsSchema = new Schema({
     commentId: String,
     username: String,
     comment: String
 });
-export default model('Comment', CommentSchema);
+export default model('Comments', CommentsSchema);
